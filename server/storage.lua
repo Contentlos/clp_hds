@@ -17,6 +17,7 @@ S.FILES = {
     recipes        = 'data/recipes.json',
     drugs          = 'data/drugs.json',
     labs           = 'data/labs.json',
+    shells         = 'data/shells.json',
     zones          = 'data/zones.json',
     admin_settings = 'data/admin_settings.json',
     logs           = 'data/logs.json',

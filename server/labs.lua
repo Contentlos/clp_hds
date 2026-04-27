@@ -53,13 +53,14 @@ function LB.create(opts, source)
         id        = ('lab_%d'):format(d.next_seq),
         seq       = d.next_seq,
         label     = opts.label or ('Labor #' .. d.next_seq),
-        kind      = opts.kind or 'apartment', -- 'house' | 'apartment'
+        kind      = opts.kind or 'apartment', -- 'house' | 'apartment' | 'warehouse' | 'bunker' | 'custom'
         owner     = owner,
         members   = {},
         objects   = {},
         inventory = {},
         anchor    = opts.anchor or { x = 0.0, y = 0.0, z = 0.0 },
-        teleport  = opts.teleport or 'default_shell',
+        shell_id  = opts.shell_id or opts.teleport or 'default_shell',
+        teleport  = opts.shell_id or opts.teleport or 'default_shell', -- legacy alias
         heat      = 0,
         created   = os.time(),
     }
