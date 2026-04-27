@@ -151,6 +151,41 @@ danach via `clp_hds:config:push` an alle Clients verteilt → **kein Restart nö
 - Neues Minigame ⇒ neue Datei `html/js/minigames/<name>.js`, registriert sich auf `CLPHDS.on('minigame', …)`.
 - Neuer Adminbereich ⇒ neue Datei `html/js/admin/<tab>.js` mit `CLPADMIN.register('xy', renderFn)`.
 
+### Shells / MLOs (Innenräume für Labore)
+Shells werden in `data/shells.json` gepflegt und sind im Admin-Panel unter
+**Shells / MLOs** vollständig live editierbar (kein Restart nötig).
+
+Eine Shell-Definition:
+```jsonc
+{
+  "id":           "shell_meth_lab",        // muss eindeutig sein
+  "label":        "Meth Lab Interior",
+  "kind":         "warehouse",             // apartment|house|warehouse|bunker|custom
+  "ipl":          "v_methlab",             // optional, wird via RequestIpl geladen
+  "interior_id":  null,                    // optional, GetInteriorAtCoords automatisch
+  "teleport_in":  { "x": 1015.0, "y": -3097.0, "z": -39.0, "h": 90.0 },
+  "teleport_out": null,                    // null = nutze lab.anchor (Aussenposition)
+  "place_bounds": { "min": [-15,-15,-2], "max": [15,15,6] },
+  "fade_ms":      500,
+  "doors":        []                       // optional fuer Raid-System
+}
+```
+
+Workflow für neue MLOs:
+1. Im Admin-Panel **Shells / MLOs → Neue Shell**.
+2. ID, Label, Typ und (falls nötig) IPL eintragen.
+3. Zum Innenraum-Spawnpunkt fahren / fly-cammen, dann
+   **„Aktuelle Pos"** klicken → Server liest Koordinaten + Heading des Spielers
+   serverseitig aus und füllt das Feld.
+4. **Speichern** → Live-Push an alle Clients.
+5. Optional **Test-Teleport** klickt den Admin sofort in die Shell, ohne ein Lab zu öffnen.
+6. Im Tab **Labore** kann man pro Lab via Dropdown die Shell zuweisen → wirkt
+   beim nächsten Eintreten ohne Restart.
+
+Beim Eintreten in ein Lab löst `client/instance.lua` die Shell auf (1. `data/shells.json`,
+2. legacy `admin_settings.labs.teleport_targets`, 3. hartcodierter Default), lädt bei
+Bedarf den IPL und teleportiert den Spieler.
+
 ---
 
 ## TODO / Bekannte Lücken

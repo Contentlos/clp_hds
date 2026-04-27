@@ -12,6 +12,7 @@ local A   = CLPHDS.admin
 local C   = CLPHDS.config
 local I   = CLPHDS.items
 local LB  = CLPHDS.labs
+local SH  = CLPHDS.shells
 local P   = CLPHDS.perms
 local B   = CLPHDS.bridge
 local L   = CLPHDS.logging
@@ -119,6 +120,12 @@ handlers['labs:reset'] = function(src, payload)
     LB.update(payload.id, { objects = {}, inventory = {}, members = {}, heat = 0 }, src)
     return { ok = true }
 end
+handlers['labs:setShell'] = function(src, payload)
+    if not gate(src) then return { ok = false } end
+    if not SH.get(payload.shell_id) then return { ok = false, error = 'unknown_shell' } end
+    LB.update(payload.id, { shell_id = payload.shell_id, teleport = payload.shell_id }, src)
+    return { ok = true }
+end
 handlers['labs:addMember'] = function(src, payload)
     if not gate(src) then return { ok = false } end
     return { ok = LB.addMember(payload.id, payload.identifier, payload.role or 'worker', src) }
@@ -126,6 +133,37 @@ end
 handlers['labs:removeMember'] = function(src, payload)
     if not gate(src) then return { ok = false } end
     return { ok = LB.removeMember(payload.id, payload.identifier, src) }
+end
+
+-- =============== SHELLS / MLO ===============
+handlers['shells:list']   = function(src) return { shells = SH.list() } end
+handlers['shells:upsert'] = function(src, payload)
+    if not gate(src) then return { ok = false } end
+    local ok, err = SH.upsert(payload, src)
+    return { ok = ok, error = err }
+end
+handlers['shells:delete'] = function(src, payload)
+    if not gate(src) then return { ok = false } end
+    local ok, err = SH.delete(payload.id, src)
+    return { ok = ok, error = err }
+end
+-- Hilfsaktion: liest die aktuelle Spielerposition serverseitig auf, damit
+-- der Admin im Editor "Aktuelle Position uebernehmen" klicken kann.
+handlers['shells:capturePos'] = function(src)
+    if not gate(src) then return { ok = false } end
+    local ped = GetPlayerPed(src)
+    if not ped or ped == 0 then return { ok = false, error = 'no_ped (OneSync off?)' } end
+    local p = GetEntityCoords(ped)
+    local h = GetEntityHeading(ped)
+    return { ok = true, pos = { x = (p.x or 0.0) + 0.0, y = (p.y or 0.0) + 0.0, z = (p.z or 0.0) + 0.0, h = (h or 0.0) + 0.0 } }
+end
+-- Teleportiert den Admin in eine Shell zum Testen.
+handlers['shells:teleport'] = function(src, payload)
+    if not gate(src) then return { ok = false } end
+    local s = SH.get(payload.id); if not s then return { ok = false, error = 'not_found' } end
+    TriggerClientEvent('clp_hds:shell:debugTeleport', src, s)
+    L.write('shells', 'teleport', { id = s.id }, src)
+    return { ok = true }
 end
 
 -- =============== PLAYERS ===============
@@ -224,6 +262,7 @@ handlers['admin:export'] = function(src)
         items   = C.get('items'),
         recipes = C.get('recipes'),
         drugs   = C.get('drugs'),
+        shells  = C.get('shells'),
         zones   = C.get('zones'),
         admin_settings = C.get('admin_settings'),
     }
@@ -231,7 +270,7 @@ end
 handlers['admin:import'] = function(src, payload)
     if not gate(src, CLPHDS.ADMIN_LEVELS.SUPERADMIN) then return { ok = false } end
     if type(payload) ~= 'table' then return { ok = false } end
-    for _, key in ipairs({ 'items', 'recipes', 'drugs', 'zones', 'admin_settings' }) do
+    for _, key in ipairs({ 'items', 'recipes', 'drugs', 'shells', 'zones', 'admin_settings' }) do
         if payload[key] then C.set(key, payload[key], src) end
     end
     L.write('admin', 'import', { keys = U.tlen(payload) }, src)

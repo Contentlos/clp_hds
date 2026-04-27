@@ -1,0 +1,40 @@
+{
+    "shells": [
+        {
+            "id":           "default_shell",
+            "label":        "Standard Apartment",
+            "kind":         "apartment",
+            "ipl":          null,
+            "interior_id":  null,
+            "teleport_in":  { "x": 1453.0, "y": -1100.0, "z": 200.0, "h": 0.0 },
+            "teleport_out": null,
+            "place_bounds": { "min": [-12.0, -12.0, -2.0], "max": [12.0, 12.0, 4.0] },
+            "fade_ms":      500,
+            "doors":        []
+        },
+        {
+            "id":           "shell_warehouse_small",
+            "label":        "Kleines Warehouse (Shell)",
+            "kind":         "warehouse",
+            "ipl":          null,
+            "interior_id":  null,
+            "teleport_in":  { "x": 1015.0, "y": -3097.0, "z": -39.0, "h": 90.0 },
+            "teleport_out": null,
+            "place_bounds": { "min": [-15.0, -15.0, -2.0], "max": [15.0, 15.0, 6.0] },
+            "fade_ms":      500,
+            "doors":        []
+        },
+        {
+            "id":           "shell_bunker",
+            "label":        "Bunker (Shell)",
+            "kind":         "bunker",
+            "ipl":          null,
+            "interior_id":  null,
+            "teleport_in":  { "x": 894.6, "y": -3245.6, "z": -98.25, "h": 180.0 },
+            "teleport_out": null,
+            "place_bounds": { "min": [-25.0, -25.0, -3.0], "max": [25.0, 25.0, 6.0] },
+            "fade_ms":      600,
+            "doors":        []
+        }
+    ]
+}
