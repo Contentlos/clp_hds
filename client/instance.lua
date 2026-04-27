@@ -62,7 +62,7 @@ end
 
 -- Laedt optional einen IPL bevor teleportiert wird.
 local function loadIplIfNeeded(shell)
-    if shell.ipl and not IsIplActive(shell.ipl) then
+    if shell.ipl and shell.ipl ~= '' and not IsIplActive(shell.ipl) then
         RequestIpl(shell.ipl)
         local timeout = GetGameTimer() + 1500
         while not IsIplActive(shell.ipl) and GetGameTimer() < timeout do Wait(0) end
@@ -86,7 +86,7 @@ local function doTeleport(shell, lab)
     end
 
     if lab then _currentLab = lab; _inside = true end
-    SetTimeout(fade - 100, function() DoScreenFadeIn(fade) end)
+    SetTimeout(math.max(fade - 100, 50), function() DoScreenFadeIn(fade) end)
 end
 
 function INST.enter(lab)
@@ -113,7 +113,7 @@ function INST.leave()
     TriggerServerEvent(CLPHDS.EVT.LAB_LEAVE, _currentLab.id)
     _currentLab = nil
     _inside     = false
-    SetTimeout(fade - 100, function() DoScreenFadeIn(fade) end)
+    SetTimeout(math.max(fade - 100, 50), function() DoScreenFadeIn(fade) end)
     TriggerEvent('clp_hds:lab:left')
 end
 

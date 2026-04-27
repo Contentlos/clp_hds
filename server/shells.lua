@@ -43,6 +43,7 @@ local function validate(s)
         end
     end
     s.kind     = s.kind or 'apartment'
+    if s.ipl == '' then s.ipl = nil end
     s.fade_ms  = tonumber(s.fade_ms) or 500
     s.doors    = type(s.doors) == 'table' and s.doors or {}
     s.place_bounds = s.place_bounds or { min = { -12.0, -12.0, -2.0 }, max = { 12.0, 12.0, 4.0 } }
