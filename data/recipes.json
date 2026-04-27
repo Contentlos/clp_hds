@@ -1,0 +1,102 @@
+{
+    "recipes": [
+        {
+            "id": "recipe_meth_oil",
+            "drug": "meth",
+            "station": "station_chem",
+            "minigame": "meth",
+            "duration_sec": 18,
+            "inputs":  [{ "item": "raw_pseudoephedrine", "count": 4 },
+                        { "item": "raw_phosphorus",      "count": 1 },
+                        { "item": "raw_ammonia",         "count": 1 }],
+            "outputs": [{ "item": "int_meth_oil", "count": 2, "quality_from_minigame": true }],
+            "tools":   [{ "item": "tool_thermometer", "consume": false }],
+            "success_base": 0.85
+        },
+        {
+            "id": "recipe_meth_final",
+            "drug": "meth",
+            "station": "station_table",
+            "minigame": "meth",
+            "duration_sec": 20,
+            "inputs":  [{ "item": "int_meth_oil", "count": 2 },
+                        { "item": "raw_solvent",  "count": 1 }],
+            "outputs": [{ "item": "drug_meth", "count": 4, "quality_from_minigame": true }],
+            "tools":   [{ "item": "tool_filter", "consume": true }],
+            "success_base": 0.9
+        },
+
+        {
+            "id": "recipe_speed_paste",
+            "drug": "speed",
+            "station": "station_chem",
+            "minigame": "speed",
+            "duration_sec": 14,
+            "inputs":  [{ "item": "raw_ephedra",  "count": 5 },
+                        { "item": "raw_solvent",  "count": 1 }],
+            "outputs": [{ "item": "int_speed_paste", "count": 2, "quality_from_minigame": true }],
+            "tools":   [],
+            "success_base": 0.9
+        },
+        {
+            "id": "recipe_speed_final",
+            "drug": "speed",
+            "station": "station_table",
+            "minigame": "speed",
+            "duration_sec": 16,
+            "inputs":  [{ "item": "int_speed_paste", "count": 2 }],
+            "outputs": [{ "item": "drug_speed", "count": 4, "quality_from_minigame": true }],
+            "tools":   [{ "item": "tool_filter", "consume": true }],
+            "success_base": 0.92
+        },
+
+        {
+            "id": "recipe_heroin_base",
+            "drug": "heroin",
+            "station": "station_chem",
+            "minigame": "heroin",
+            "duration_sec": 22,
+            "inputs":  [{ "item": "raw_poppy",   "count": 6 },
+                        { "item": "raw_ammonia", "count": 1 }],
+            "outputs": [{ "item": "int_morphine_base", "count": 2, "quality_from_minigame": true }],
+            "tools":   [],
+            "success_base": 0.8
+        },
+        {
+            "id": "recipe_heroin_final",
+            "drug": "heroin",
+            "station": "station_table",
+            "minigame": "heroin",
+            "duration_sec": 22,
+            "inputs":  [{ "item": "int_morphine_base", "count": 2 },
+                        { "item": "raw_solvent",       "count": 1 }],
+            "outputs": [{ "item": "drug_heroin", "count": 3, "quality_from_minigame": true }],
+            "tools":   [{ "item": "tool_filter", "consume": true }],
+            "success_base": 0.85
+        },
+
+        {
+            "id": "recipe_lsd_solution",
+            "drug": "lsd",
+            "station": "station_chem",
+            "minigame": "lsd",
+            "duration_sec": 18,
+            "inputs":  [{ "item": "raw_lysergic", "count": 2 },
+                        { "item": "raw_solvent",  "count": 1 }],
+            "outputs": [{ "item": "int_lsd_solution", "count": 2, "quality_from_minigame": true }],
+            "tools":   [],
+            "success_base": 0.75
+        },
+        {
+            "id": "recipe_lsd_final",
+            "drug": "lsd",
+            "station": "station_table",
+            "minigame": "lsd",
+            "duration_sec": 16,
+            "inputs":  [{ "item": "int_lsd_solution", "count": 1 }],
+            "outputs": [{ "item": "drug_lsd", "count": 10, "quality_from_minigame": true }],
+            "tools":   [{ "item": "tool_blotter", "consume": true }],
+            "success_base": 0.9
+        }
+    ]
+}

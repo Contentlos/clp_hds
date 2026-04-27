@@ -1,0 +1,49 @@
+{
+    "admin_groups":   ["admin", "superadmin"],
+    "superadmin_ids": [],
+    "require_pin":    false,
+    "pin_hash":       "",
+    "police_jobs":    ["police", "sheriff", "sasp", "lspd"],
+    "autosave_interval_sec": 60,
+    "log_retention_days":    30,
+    "broadcast_blacklist":   ["pin_hash", "superadmin_ids"],
+
+    "heat": {
+        "decay_per_minute":   1.5,
+        "smell_radius":       60.0,
+        "smell_threshold":    35,
+        "raid_threshold":     80,
+        "raid_chance":        0.35,
+        "electricity_factor": 0.6
+    },
+
+    "market": {
+        "update_interval_sec": 300,
+        "volatility":          0.18,
+        "price_floor_pct":     0.55,
+        "price_ceiling_pct":   1.65
+    },
+
+    "crafting": {
+        "perfect_batch_chance": 0.05,
+        "quality_min":          25,
+        "quality_max":          100,
+        "fail_destroys_inputs": true
+    },
+
+    "gathering": {
+        "zone_rotation_minutes": 45,
+        "active_zones_max":      4,
+        "npc_vendor_chance":     0.20
+    },
+
+    "labs": {
+        "ghost_grid_step":     0.05,
+        "ghost_rotation_step": 5.0,
+        "rapid_dismantle_sec": 20,
+        "dismantle_sec":       90,
+        "teleport_targets": [
+            { "id": "default_shell", "interior": [1453.0, -1100.0, 200.0], "exit_offset": [0.0, 0.0, 0.5] }
+        ]
+    }
+}

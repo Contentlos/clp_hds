@@ -1,0 +1,36 @@
+/* admin.css */
+.admin-main h2 { margin: 0 0 12px; font-size: 18px; }
+.admin-main h3 { margin: 0 0 8px; font-size: 14px; color: #b9c1d4; }
+.admin-main .toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+.admin-main .grid { display: grid; gap: 14px; }
+.admin-main .grid.two { grid-template-columns: 1fr 1fr; }
+.admin-main .grid.three { grid-template-columns: 1fr 1fr 1fr; }
+
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #b9c1d4; }
+.field label { font-weight: 500; }
+.field input, .field select, .field textarea { font-size: 13px; color: #e9ecf1; }
+.field textarea { min-height: 80px; resize: vertical; }
+
+.list { max-height: 56vh; overflow-y: auto; }
+.list .row-item {
+  display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center;
+  padding: 8px 10px; border-radius: 8px;
+}
+.list .row-item:hover  { background: rgba(255,255,255,0.04); }
+.list .row-item .meta  { font-size: 12px; color: #7c87a3; }
+
+.dropzone {
+  border: 1px dashed rgba(255,255,255,0.15); border-radius: 8px;
+  padding: 8px; min-height: 48px; display: flex; flex-wrap: wrap; gap: 6px;
+}
+.dropzone.drag { border-color: #6da9ff; background: rgba(70,130,255,0.06); }
+.chip {
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px; cursor: grab; display: inline-flex; gap: 6px; align-items: center;
+}
+.chip .x { color: #ff8b8b; cursor: pointer; }
+
+.log { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 12px; color: #b9c1d4; }
+.log .time { color: #6da9ff; margin-right: 6px; }
+.log .cat  { color: #ffd07a; margin-right: 6px; }

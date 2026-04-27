@@ -1,0 +1,48 @@
+{
+    "drugs": [
+        {
+            "id":    "meth",
+            "label": "Methamphetamin",
+            "color": "#7ee5ff",
+            "chain": ["raw_pseudoephedrine", "int_meth_oil", "drug_meth"],
+            "minigame": { "id": "meth", "difficulty": 0.55, "duration": 22 },
+            "base_price": 240,
+            "heat_per_craft": 6,
+            "smell_factor": 1.0,
+            "electricity_factor": 1.2
+        },
+        {
+            "id":    "speed",
+            "label": "Speed",
+            "color": "#ffd479",
+            "chain": ["raw_ephedra", "int_speed_paste", "drug_speed"],
+            "minigame": { "id": "speed", "difficulty": 0.45, "duration": 18 },
+            "base_price": 160,
+            "heat_per_craft": 4,
+            "smell_factor": 0.7,
+            "electricity_factor": 0.8
+        },
+        {
+            "id":    "heroin",
+            "label": "Heroin",
+            "color": "#c98a5b",
+            "chain": ["raw_poppy", "int_morphine_base", "drug_heroin"],
+            "minigame": { "id": "heroin", "difficulty": 0.65, "duration": 25 },
+            "base_price": 360,
+            "heat_per_craft": 8,
+            "smell_factor": 1.3,
+            "electricity_factor": 1.0
+        },
+        {
+            "id":    "lsd",
+            "label": "LSD",
+            "color": "#d39bff",
+            "chain": ["raw_lysergic", "int_lsd_solution", "drug_lsd"],
+            "minigame": { "id": "lsd", "difficulty": 0.7, "duration": 20 },
+            "base_price": 280,
+            "heat_per_craft": 5,
+            "smell_factor": 0.5,
+            "electricity_factor": 1.5
+        }
+    ]
+}

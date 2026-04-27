@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>clp_hds</title>
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/glass.css" />
+<link rel="stylesheet" href="css/minigames.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="hidden">
+  <!-- Notify Stack -->
+  <div id="notifyStack" class="notify-stack"></div>
+
+  <!-- ============ MAIN PANEL (Inventar / Station / Crafting) ============ -->
+  <div id="mainPanel" class="panel hidden">
+    <div class="glass main-shell">
+      <header class="row between">
+        <h1>clp_hds</h1>
+        <button class="btn ghost" data-action="close">Schließen</button>
+      </header>
+      <div id="mainView"></div>
+    </div>
+  </div>
+
+  <!-- ============ MINIGAME OVERLAY ============ -->
+  <div id="minigamePanel" class="panel hidden">
+    <div class="glass mg-shell">
+      <header class="row between">
+        <h2 id="mgTitle">Minigame</h2>
+        <button class="btn ghost" data-action="mg-cancel">Abbrechen</button>
+      </header>
+      <div id="mgStage"></div>
+      <footer class="row between">
+        <span id="mgHint">…</span>
+        <span id="mgScore">Score: 0</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ ADMIN PANEL ============ -->
+  <div id="adminPanel" class="panel hidden">
+    <div class="glass admin-shell">
+      <aside class="admin-side">
+        <div class="brand">
+          <span class="dot"></span>
+          <strong>clp_hds Admin</strong>
+          <small id="adminVersion">v0.0</small>
+        </div>
+        <nav id="adminNav">
+          <button data-tab="items">Items</button>
+          <button data-tab="recipes">Rezepte</button>
+          <button data-tab="drugs">Drogen</button>
+          <button data-tab="minigames">Minigames</button>
+          <button data-tab="labs">Labore</button>
+          <button data-tab="players">Spieler</button>
+          <button data-tab="police">Heat / Polizei</button>
+          <button data-tab="zones">Sammelzonen</button>
+          <button data-tab="logs">Logs</button>
+          <button data-tab="settings">Settings</button>
+        </nav>
+        <footer>
+          <button class="btn ghost" data-action="close">Schließen</button>
+        </footer>
+      </aside>
+      <main class="admin-main" id="adminMain"></main>
+    </div>
+  </div>
+
+  <!-- ============ JS ============ -->
+  <script src="js/core.js"></script>
+  <script src="js/sounds.js"></script>
+  <script src="js/inventory.js"></script>
+  <script src="js/placement.js"></script>
+  <script src="js/minigames/meth.js"></script>
+  <script src="js/minigames/speed.js"></script>
+  <script src="js/minigames/heroin.js"></script>
+  <script src="js/minigames/lsd.js"></script>
+  <script src="js/admin/app.js"></script>
+  <script src="js/admin/items.js"></script>
+  <script src="js/admin/recipes.js"></script>
+  <script src="js/admin/drugs.js"></script>
+  <script src="js/admin/minigames.js"></script>
+  <script src="js/admin/labs.js"></script>
+  <script src="js/admin/players.js"></script>
+  <script src="js/admin/police.js"></script>
+  <script src="js/admin/zones.js"></script>
+  <script src="js/admin/logs.js"></script>
+  <script src="js/admin/settings.js"></script>
+</body>
+</html>

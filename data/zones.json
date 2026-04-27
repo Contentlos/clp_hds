@@ -1,0 +1,56 @@
+{
+    "zones": [
+        {
+            "id":     "ephedra_grove",
+            "label":  "Ephedra-Hain (Mt. Chiliad)",
+            "items":  [{ "item": "raw_ephedra", "count": [1, 3], "weight": 80 }],
+            "centers": [
+                { "pos": [501.7, 5604.2, 797.9], "radius": 60 },
+                { "pos": [-1450.1, 4641.2, 18.4], "radius": 80 }
+            ],
+            "spawn_count": 12,
+            "active_minutes": 45,
+            "respawn_minutes": 30
+        },
+        {
+            "id":     "poppy_field",
+            "label":  "Mohnfeld (Grapeseed)",
+            "items":  [{ "item": "raw_poppy", "count": [1, 2], "weight": 90 }],
+            "centers": [
+                { "pos": [1844.7, 4768.3, 41.6], "radius": 70 },
+                { "pos": [2306.4, 5160.2, 56.3], "radius": 60 }
+            ],
+            "spawn_count": 14,
+            "active_minutes": 50,
+            "respawn_minutes": 35
+        },
+        {
+            "id":     "chem_dump",
+            "label":  "Chemie-Schwarzmarkt",
+            "items":  [
+                { "item": "raw_phosphorus", "count": [1, 2], "weight": 50 },
+                { "item": "raw_ammonia",    "count": [1, 1], "weight": 30 },
+                { "item": "raw_solvent",    "count": [1, 2], "weight": 60 },
+                { "item": "raw_lysergic",   "count": [1, 1], "weight": 5  }
+            ],
+            "centers": [
+                { "pos": [2747.8, 1487.6, 24.5], "radius": 40 }
+            ],
+            "spawn_count": 6,
+            "active_minutes": 35,
+            "respawn_minutes": 50
+        },
+        {
+            "id":     "pseudo_pharma",
+            "label":  "Pharma-Diebstahl",
+            "items":  [{ "item": "raw_pseudoephedrine", "count": [2, 5], "weight": 100 }],
+            "centers": [
+                { "pos": [357.4, -594.0, 28.7], "radius": 30 },
+                { "pos": [1830.1, 3673.5, 34.2], "radius": 30 }
+            ],
+            "spawn_count": 8,
+            "active_minutes": 30,
+            "respawn_minutes": 60
+        }
+    ]
+}

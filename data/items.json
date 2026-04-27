@@ -1,0 +1,29 @@
+{
+    "items": [
+        { "id": "raw_pseudoephedrine", "label": "Pseudoephedrin",        "type": "raw",          "weight": 0.05, "stack": 200, "decay_hours": 0,    "quality": false },
+        { "id": "raw_phosphorus",      "label": "Roter Phosphor",         "type": "raw",          "weight": 0.10, "stack": 200, "decay_hours": 0,    "quality": false },
+        { "id": "raw_ammonia",         "label": "Ammoniak (Kanister)",    "type": "raw",          "weight": 1.00, "stack": 20,  "decay_hours": 0,    "quality": false },
+        { "id": "raw_ephedra",         "label": "Ephedra-Pflanze",        "type": "raw",          "weight": 0.20, "stack": 100, "decay_hours": 24,   "quality": true  },
+        { "id": "raw_poppy",           "label": "Mohnkapsel",             "type": "raw",          "weight": 0.15, "stack": 100, "decay_hours": 36,   "quality": true  },
+        { "id": "raw_lysergic",        "label": "Lysergsäure-Probe",      "type": "raw",          "weight": 0.05, "stack": 50,  "decay_hours": 12,   "quality": true  },
+        { "id": "raw_solvent",         "label": "Lösungsmittel",          "type": "raw",          "weight": 0.50, "stack": 50,  "decay_hours": 0,    "quality": false },
+
+        { "id": "int_meth_oil",        "label": "Meth-Öl",                "type": "intermediate", "weight": 0.20, "stack": 100, "decay_hours": 6,    "quality": true  },
+        { "id": "int_speed_paste",     "label": "Speed-Paste",            "type": "intermediate", "weight": 0.20, "stack": 100, "decay_hours": 8,    "quality": true  },
+        { "id": "int_morphine_base",   "label": "Morphinbase",            "type": "intermediate", "weight": 0.25, "stack": 50,  "decay_hours": 6,    "quality": true  },
+        { "id": "int_lsd_solution",    "label": "LSD-Lösung",             "type": "intermediate", "weight": 0.05, "stack": 50,  "decay_hours": 4,    "quality": true  },
+
+        { "id": "drug_meth",           "label": "Meth (Crystal)",         "type": "final",        "weight": 0.05, "stack": 100, "decay_hours": 0,    "quality": true  },
+        { "id": "drug_speed",          "label": "Speed",                  "type": "final",        "weight": 0.05, "stack": 100, "decay_hours": 0,    "quality": true  },
+        { "id": "drug_heroin",         "label": "Heroin",                 "type": "final",        "weight": 0.05, "stack": 100, "decay_hours": 0,    "quality": true  },
+        { "id": "drug_lsd",            "label": "LSD-Trip (Pappe)",       "type": "final",        "weight": 0.01, "stack": 200, "decay_hours": 0,    "quality": true  },
+
+        { "id": "tool_thermometer",    "label": "Laborthermometer",       "type": "tool",         "weight": 0.30, "stack": 5,   "decay_hours": 0,    "quality": false },
+        { "id": "tool_filter",         "label": "Filtersatz",             "type": "tool",         "weight": 0.10, "stack": 50,  "decay_hours": 0,    "quality": false },
+        { "id": "tool_blotter",        "label": "Löschblatt",             "type": "tool",         "weight": 0.02, "stack": 200, "decay_hours": 0,    "quality": false },
+
+        { "id": "station_table",       "label": "Produktionstisch",       "type": "station",      "weight": 12.0, "stack": 5,   "decay_hours": 0,    "quality": false, "model": "prop_table_03" },
+        { "id": "station_chem",        "label": "Chemiestation",          "type": "station",      "weight": 18.0, "stack": 3,   "decay_hours": 0,    "quality": false, "model": "prop_test_elec_cab" },
+        { "id": "station_locker",      "label": "Lagercontainer",         "type": "station",      "weight": 25.0, "stack": 3,   "decay_hours": 0,    "quality": false, "model": "prop_storagebox_01" }
+    ]
+}
